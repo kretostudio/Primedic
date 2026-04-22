@@ -10,14 +10,14 @@ export async function Hero() {
   const hero = getHero(locale);
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#1a0303] pt-[160px] pb-[80px] md:pt-[200px] md:pb-[120px]">
+    <section className="relative isolate overflow-hidden bg-[#3c0a0a] pt-[160px] pb-[80px] md:pt-[200px] md:pb-[120px]">
       <Image
         src="/images/hero/backdrop.webp"
         alt="Primedic HeartSave myPAD hero arkaplanı — kırmızı gradyan ışık efekti"
         width={1920}
         height={1503}
         priority
-        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-top select-none"
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-center select-none"
       />
 
       <Container width="wide">
@@ -28,9 +28,8 @@ export async function Hero() {
             </Reveal>
 
             <Reveal delay={0.2} y={28}>
-              <h1 className="text-display mt-8 max-w-[940px] text-white">
-                <span className="block">{hero.titleLine1}</span>
-                <span className="block">{hero.titleLine2}</span>
+              <h1 className="text-display mt-8 max-w-[900px] text-balance text-white sm:max-w-none">
+                {hero.titleLine1} {hero.titleLine2}
               </h1>
             </Reveal>
 
@@ -42,15 +41,15 @@ export async function Hero() {
           </div>
 
           <Reveal delay={0.5} y={40} duration={0.7}>
-            <div className="pointer-events-none relative z-0 -mt-16 flex w-full justify-center md:-mt-20 lg:-mt-28">
+            <div className="pointer-events-none relative z-0 -mt-10 flex w-full justify-center md:-mt-14 lg:-mt-20">
               <Image
                 src="/images/hero/composition.webp"
                 alt="HeartSave myPAD — kompakt defibrilatör cihazı: LTE & Wifi bağlantı, CPR geri bildirimi, IP66 dayanıklılık, 1.1 kg, 5 yıl batarya, pediatrik mod"
                 width={1248}
                 height={1248}
                 priority
-                sizes="(min-width: 1024px) 960px, (min-width: 640px) 600px, 90vw"
-                className="h-auto w-full max-w-[960px] object-contain"
+                sizes="(min-width: 1024px) 780px, (min-width: 640px) 520px, 85vw"
+                className="h-auto w-full max-w-[780px] object-contain"
               />
             </div>
           </Reveal>
