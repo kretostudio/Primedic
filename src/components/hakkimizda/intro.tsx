@@ -16,7 +16,7 @@ export async function HakkimizdaIntro() {
             {paragraphs.map((p, i) => (
               <p
                 key={i}
-                className="text-[18px] font-normal leading-[1.55] tracking-[0.2px] text-black md:text-[26px] md:leading-[1.4] lg:text-[32px] lg:leading-[46px]"
+                className="text-[16px] font-normal leading-[1.55] tracking-[0.2px] text-black md:text-[20px] md:leading-[1.45] lg:text-[24px] lg:leading-[36px]"
               >
                 {p}
               </p>

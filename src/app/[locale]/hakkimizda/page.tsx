@@ -103,7 +103,7 @@ export default function HakkimizdaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <MenuBar />
-      <main>
+      <main className="bg-white">
         <HakkimizdaHero />
         <HakkimizdaIntro />
         <HakkimizdaSolutions />

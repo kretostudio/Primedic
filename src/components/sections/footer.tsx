@@ -11,14 +11,14 @@ export async function Footer() {
 
   return (
     <footer
-      className="py-16 md:py-20"
+      className="py-[52px] md:py-[64px]"
       style={{
         backgroundImage:
-          "linear-gradient(92deg, rgba(178, 28, 28, 0.9) 32.79%, rgba(26, 29, 33, 0.81) 105.32%), linear-gradient(#2a0505, #2a0505)",
+          "linear-gradient(92deg, rgba(178, 28, 28, 0.9) 32.79%, rgba(26, 29, 33, 0.9) 105.32%), linear-gradient(#2a0505, #2a0505)",
       }}
     >
       <Container width="wide">
-        <div className="grid gap-12 md:grid-cols-[auto_1fr] md:gap-20">
+        <div className="grid gap-10 md:grid-cols-[auto_1fr] md:gap-16">
           <div className="flex items-start">
             <Image
               src="/logos/bilgin-tip-footer.svg"
@@ -26,18 +26,18 @@ export async function Footer() {
               width={382}
               height={220}
               unoptimized
-              className="h-auto w-[280px] object-contain md:w-[320px]"
+              className="h-auto w-[224px] object-contain md:w-[256px]"
             />
           </div>
 
           {/* Columns */}
-          <div className="grid gap-10 md:grid-cols-[auto_auto_auto_1fr] md:items-start md:justify-items-end">
+          <div className="grid gap-8 md:grid-cols-[auto_auto_auto_1fr] md:items-start md:justify-items-end">
             {footerContent.companyColumns.map((col) => (
-              <nav key={col.title} aria-label={col.title} className="min-w-[140px]">
+              <nav key={col.title} aria-label={col.title} className="min-w-[112px]">
                 <h3 className="text-eyebrow text-white/60">
                   {col.title}
                 </h3>
-                <ul className="mt-5 space-y-3 text-[15px] text-white/85">
+                <ul className="mt-4 space-y-2.5 text-[12px] text-white/85">
                   {col.links.map((l) => (
                     <li key={l.href}>
                       <Link
@@ -53,13 +53,13 @@ export async function Footer() {
             ))}
 
             <div className="flex flex-col items-start md:items-end">
-              <ul aria-label="Sosyal medya" className="flex gap-3">
+              <ul aria-label="Sosyal medya" className="flex gap-2.5">
                 {footerContent.socials.map((s) => (
                   <li key={s.id}>
                     <a
                       href={s.href}
                       aria-label={s.label}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white hover:text-[#3c0a0a]"
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white hover:text-[#3c0a0a]"
                     >
                       <SocialIcon name={s.id} />
                     </a>
@@ -67,14 +67,14 @@ export async function Footer() {
                 ))}
               </ul>
 
-              <div className="mt-8">
+              <div className="mt-6">
                 <LanguageSwitcher />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/10 pt-6 text-center text-[13px] text-white/50">
+        <div className="mt-13 border-t border-white/10 pt-5 text-center text-[10px] text-white/50">
           © {new Date().getFullYear()} Bilgin Tıp · Primedic HeartSave myPAD
         </div>
       </Container>

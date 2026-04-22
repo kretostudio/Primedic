@@ -13,7 +13,7 @@ export async function Features() {
   return (
     <section
       id="urunler"
-      className="relative overflow-hidden bg-white py-[80px] md:py-[112px]"
+      className="relative overflow-hidden bg-white py-[64px] md:py-[90px]"
       style={{
         backgroundImage:
           "linear-gradient(151deg, rgba(178, 28, 28, 0.9) 31%, rgba(26, 29, 33, 0.81) 89%)",
@@ -21,29 +21,29 @@ export async function Features() {
       aria-labelledby="features-title"
     >
       <Container width="wide">
-        <div className="mx-auto flex max-w-[1321px] flex-col">
+        <div className="mx-auto flex max-w-[880px] flex-col">
           <div className="flex flex-col items-center text-center">
             <Reveal y={20}>
-              <span className="inline-flex h-[45px] items-center justify-center rounded-[38px] border border-black bg-white px-8 text-[16px] font-bold text-black md:text-[24px]">
+              <span className="inline-flex h-[29px] items-center justify-center rounded-[30px] border border-black bg-white px-5 text-[10px] font-bold text-black md:text-[15px]">
                 {features.pretitle}
               </span>
             </Reveal>
             <Reveal delay={0.1} y={24}>
               <h2
                 id="features-title"
-                className="mt-12 max-w-[672px] text-[32px] font-semibold leading-[1.2] text-white md:text-[40px] lg:text-[48px]"
+                className="mt-8 max-w-[448px] leading-[1.2] text-white"
               >
                 {features.title}
               </h2>
             </Reveal>
             <Reveal delay={0.2} y={20}>
-              <p className="mt-4 max-w-[1315px] text-[20px] font-normal leading-[1.25] text-white md:text-[24px] lg:text-[32px]">
+              <p className="text-lead-lg mt-2 max-w-[848px] text-white">
                 {features.description}
               </p>
             </Reveal>
           </div>
 
-          <div className="mt-16 flex flex-col gap-10">
+          <div className="mt-11 flex flex-col gap-6">
             {features.rows.map((row, i) => (
               <Reveal key={row.title} delay={i * 0.1} y={36}>
                 <FeatureCard row={row} />
@@ -59,23 +59,23 @@ export async function Features() {
 function FeatureCard({ row }: { row: FeatureRow }) {
   return (
     <article
-      className="relative rounded-[20px] border-[1.2px] border-[#101132] p-6 backdrop-blur-[8px] md:p-10"
+      className="relative rounded-[16px] border-[1.2px] border-[#101132] p-4 backdrop-blur-[8px] md:p-6"
       style={{
         backgroundImage:
           "linear-gradient(68deg, rgba(0, 0, 0, 0.3) 25.25%, rgba(83, 84, 108, 0.3) 98.05%)",
       }}
     >
-      <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-20">
-        <div className="flex flex-1 gap-5">
+      <div className="flex flex-col items-center gap-6 lg:flex-row lg:gap-13">
+        <div className="flex flex-1 gap-3">
           <RailMarker />
           <div className="flex-1">
             <h3 className="font-medium text-white">
               {row.title}
             </h3>
-            <ul className="mt-7 flex flex-col gap-6">
+            <ul className="mt-5 flex flex-col gap-4">
               {row.bullets.map((parts, i) => (
-                <li key={i} className="flex gap-4">
-                  <CheckCircle className="mt-1 h-7 w-7 shrink-0" />
+                <li key={i} className="flex gap-2.5">
+                  <CheckCircle className="mt-1 h-4 w-4 shrink-0" />
                   <p className="text-body-lg text-white">
                     {parts.map((part, j) => (
                       <span
@@ -92,26 +92,26 @@ function FeatureCard({ row }: { row: FeatureRow }) {
           </div>
         </div>
 
-        <div className="relative w-full shrink-0 lg:w-[523px]">
+        <div className="relative w-full shrink-0 lg:w-[336px]">
           {row.badges ? (
-            <div className="relative h-[280px] w-full overflow-hidden rounded-[16px] md:h-[378px]">
+            <div className="relative h-[180px] w-full overflow-hidden rounded-[13px] md:h-[242px]">
               <Image
                 src={row.image}
                 alt={row.imageAlt}
                 width={row.imageWidth}
                 height={row.imageHeight}
-                sizes="(min-width: 1024px) 523px, 100vw"
+                sizes="(min-width: 1024px) 336px, 100vw"
                 className="absolute inset-0 h-full w-full object-cover object-right"
               />
             </div>
           ) : (
-            <div className="relative h-[280px] w-full md:h-[378px]">
+            <div className="relative h-[180px] w-full md:h-[242px]">
               <Image
                 src={row.image}
                 alt={row.imageAlt}
                 width={row.imageWidth}
                 height={row.imageHeight}
-                sizes="(min-width: 1024px) 523px, 100vw"
+                sizes="(min-width: 1024px) 336px, 100vw"
                 className="absolute inset-0 h-full w-full object-contain object-right"
               />
             </div>
@@ -146,8 +146,8 @@ function CheckCircle({ className }: { className?: string }) {
 function RailMarker() {
   return (
     <div className="flex flex-shrink-0 flex-col items-center">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/5 text-white">
-        <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/5 text-white">
+        <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden>
           <path
             d="M5 8l7 7 7-7M5 14l7 7 7-7"
             stroke="currentColor"
@@ -171,14 +171,14 @@ function SpecBadges({
   badges: ReadonlyArray<SpecBadge>;
 }) {
   return (
-    <ul className="pointer-events-none absolute -left-6 top-1/2 hidden -translate-y-1/2 flex-col gap-3 lg:flex">
+    <ul className="pointer-events-none absolute -left-5 top-1/2 hidden -translate-y-1/2 flex-col gap-2.5 lg:flex">
       {badges.map((b, i) => {
-        const offsets = ["-translate-x-4", "translate-x-2", "-translate-x-2"];
+        const offsets = ["-translate-x-3", "translate-x-1.5", "-translate-x-1.5"];
         return (
           <li
             key={b.label}
             className={cn(
-              "pointer-events-auto flex items-center gap-4 overflow-hidden rounded-[20px] border border-[#2c2d47] px-4 py-3 text-white backdrop-blur-[30px]",
+              "pointer-events-auto flex items-center gap-3 overflow-hidden rounded-[16px] border border-[#2c2d47] px-3 py-2.5 text-white backdrop-blur-[30px]",
               offsets[i],
             )}
             style={{
@@ -186,14 +186,14 @@ function SpecBadges({
                 "linear-gradient(160deg, rgba(27,28,54,0.16) 24%, rgba(112,113,122,0.16) 66%)",
             }}
           >
-            <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[16px] bg-white/[0.07] shadow-[0_0_0_1px_#2d2e48]">
+            <span className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[13px] bg-white/[0.07] shadow-[0_0_0_1px_#2d2e48]">
               <BadgeIcon name={b.icon} />
             </span>
             <span className="flex flex-col">
-              <span className="text-[12px] font-normal uppercase leading-[16px] tracking-[0.04em] text-white/90 md:text-[14px]">
+              <span className="text-[10px] font-normal uppercase leading-[13px] tracking-[0.04em] text-white/90 md:text-[11px]">
                 {b.label}
               </span>
-              <span className="text-[16px] font-bold leading-[24px] tracking-[-0.31px] text-white">
+              <span className="text-[13px] font-bold leading-[19px] tracking-[-0.31px] text-white">
                 {b.value}
               </span>
             </span>
@@ -213,7 +213,7 @@ function BadgeIcon({ name }: { name: SpecBadge["icon"] }) {
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
     "aria-hidden": true,
-    className: "h-8 w-8 text-white",
+    className: "h-6 w-6 text-white",
   };
   switch (name) {
     case "shield":

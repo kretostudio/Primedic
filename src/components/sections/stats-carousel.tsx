@@ -21,7 +21,7 @@ export function StatsCarousel() {
 
   return (
     <section
-      className="relative bg-black py-[80px] md:py-[112px] lg:py-[140px]"
+      className="relative bg-white py-[80px] md:py-[96px] lg:py-[112px]"
       style={{
         backgroundImage:
           "linear-gradient(178deg, rgba(178, 28, 28, 0.90) 20.56%, rgba(178, 28, 28, 0.90) 70.84%, rgba(26, 29, 33, 0.81) 98.96%)",
@@ -31,12 +31,12 @@ export function StatsCarousel() {
       <Container width="wide">
         <h2
           id="stats-title"
-          className="mx-auto max-w-[420px] text-center font-semibold text-white text-[26px] leading-[1.3] md:max-w-[520px] md:text-[32px] lg:max-w-[560px] lg:text-[38px]"
+          className="mx-auto max-w-[380px] text-center font-semibold text-white text-[24px] leading-[1.3] md:max-w-[480px] md:text-[30px] lg:max-w-[560px] lg:text-[38px]"
         >
           {stats.title}
         </h2>
 
-        <div className="relative mx-auto mt-8 max-w-[1060px]">
+        <div className="relative mx-auto mt-8 max-w-[1080px]">
           <div className="rounded-[16px] border-[1.2px] border-white bg-white p-4 md:p-6 lg:p-8 backdrop-blur-[8px] shadow-[0_20px_60px_-30px_rgba(0,0,0,0.35)]">
             <div
               className="relative flex flex-col items-center gap-6 overflow-hidden rounded-[16px] border border-[#272834] p-4 md:p-5"
@@ -45,13 +45,13 @@ export function StatsCarousel() {
                   "linear-gradient(55.38deg, rgba(51,51,62,0.16) 6.2%, rgba(83,84,108,0.16) 98%)",
               }}
             >
-              <div className="flex min-h-[180px] w-full flex-col items-center justify-center">
-                <div className="flex w-full max-w-[960px] flex-col items-start gap-4">
-                  <p className="text-[12px] font-semibold uppercase leading-[1.2] tracking-[0.12em] text-[#b21c1c] md:text-[13px]">
+              <div className="flex min-h-[144px] w-full flex-col items-center justify-center md:min-h-[160px] lg:min-h-[184px]">
+                <div className="flex w-full max-w-[980px] flex-col items-start gap-4">
+                  <p className="text-[11px] font-normal uppercase leading-[14px] tracking-[0.08em] text-[#b21c1c] md:text-[12px] lg:text-[13px]">
                     {slide.source}
                   </p>
                   <p
-                    className="mx-auto w-full max-w-[900px] text-center text-[18px] font-semibold leading-[1.4] text-black md:text-[22px] lg:text-[28px]"
+                    className="mx-auto w-full max-w-[928px] text-center text-[16px] font-semibold leading-[1.4] text-black md:text-[22px] lg:text-[30px]"
                     style={{ fontFeatureSettings: "'dlig' 1" }}
                   >
                     {slide.quote.map((part, i) => (
@@ -108,7 +108,7 @@ export function StatsCarousel() {
             type="button"
             onClick={prev}
             aria-label={locale === "en" ? "Previous" : "Önceki"}
-            className="absolute left-[-22px] top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-[3px] border-white bg-black text-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transition-transform hover:scale-105 md:flex"
+            className="absolute left-[-18px] top-1/2 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-[2.5px] border-white bg-black text-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transition-transform hover:scale-105 md:flex"
           >
             <ArrowLeft />
           </button>
@@ -116,7 +116,7 @@ export function StatsCarousel() {
             type="button"
             onClick={next}
             aria-label={locale === "en" ? "Next" : "Sonraki"}
-            className="absolute right-[-22px] top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-[3px] border-white bg-black text-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transition-transform hover:scale-105 md:flex"
+            className="absolute right-[-18px] top-1/2 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-[2.5px] border-white bg-black text-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transition-transform hover:scale-105 md:flex"
           >
             <ArrowRight />
           </button>

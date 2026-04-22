@@ -64,12 +64,12 @@ export const aksesuarlar = {
     {
       id: "ilk-yardim",
       label: "First Aid Kit",
-      image: { src: "/images/aksesuarlar/feature-06-ilk-yardim.webp", alt: "First aid kit" },
+      image: { src: "/images/aksesuarlar/feature-06-ilk-yardim.png", alt: "First aid kit" },
     },
     {
       id: "tasima-cantasi",
       label: "Carrying Case",
-      image: { src: "/images/aksesuarlar/group-ek.webp", alt: "Carrying case" },
+      image: { src: "/images/aksesuarlar/feature-07-tasima.png", alt: "Carrying case" },
     },
   ] as ReadonlyArray<FeatureCard>,
 

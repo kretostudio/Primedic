@@ -5,7 +5,7 @@ export function BilginTipBand() {
   return (
     <section
       aria-label="Bilgin Tıp Medikal — 35. yıl"
-      className="bg-white py-14 md:py-16"
+      className="bg-white py-11 md:py-[52px]"
     >
       <Container>
         <div className="flex items-center justify-center">
@@ -14,8 +14,8 @@ export function BilginTipBand() {
             alt="Bilgin Tıp Medikal — 35. yıl"
             width={345}
             height={199}
-            sizes="(min-width: 768px) 345px, 60vw"
-            className="h-auto w-full max-w-[345px] object-contain"
+            sizes="(min-width: 768px) 276px, 48vw"
+            className="h-auto w-full max-w-[276px] object-contain"
           />
         </div>
       </Container>

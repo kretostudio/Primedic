@@ -70,18 +70,14 @@ export function MenuBar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,box-shadow,height,transform] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 bg-transparent transition-[height,transform] duration-300 ${
         hidden ? "-translate-y-full" : "translate-y-0"
-      } ${
-        scrolled
-          ? "bg-[#2a0505]/95 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md"
-          : "bg-transparent"
       }`}
     >
       <Container width="wide">
         <div
           className={`flex items-center justify-between transition-[height] duration-300 ${
-            scrolled ? "h-[72px] md:h-[80px]" : "h-[96px] md:h-[112px]"
+            scrolled ? "h-[58px] md:h-[64px]" : "h-[77px] md:h-[90px]"
           }`}
         >
           <Link

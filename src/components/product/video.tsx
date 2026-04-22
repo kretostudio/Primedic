@@ -15,7 +15,7 @@ export function ProductVideo() {
   const thumbnailUrl = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
 
   return (
-    <section className="relative overflow-hidden py-[88px] md:py-[112px]">
+    <section className="relative overflow-hidden py-[70px] md:py-[90px]">
       <div
         aria-hidden
         className="absolute inset-0 -z-10"
@@ -26,12 +26,12 @@ export function ProductVideo() {
       />
 
       <Container width="wide">
-        <header className="mx-auto mb-12 max-w-[800px] text-center md:mb-16">
+        <header className="mx-auto mb-10 max-w-[640px] text-center md:mb-12">
           <h2 className="text-white">{heading}</h2>
-          <p className="text-lead mt-4 text-white/80">{description}</p>
+          <p className="text-lead mt-3 text-white/80">{description}</p>
         </header>
 
-        <div className="relative mx-auto w-full max-w-[1437px] overflow-hidden rounded-[24px] border border-white/15 bg-black/30 md:rounded-[40px]">
+        <div className="relative mx-auto w-full max-w-[1150px] overflow-hidden rounded-[19px] border border-white/15 bg-black/30 md:rounded-[32px]">
           <div className="relative aspect-video w-full">
             {playing ? (
               <iframe
@@ -57,11 +57,11 @@ export function ProductVideo() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 />
                 <span className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/30">
-                  <span className="flex h-[72px] w-[72px] items-center justify-center rounded-full bg-white/95 shadow-2xl transition-transform group-hover:scale-110 md:h-[96px] md:w-[96px]">
+                  <span className="flex h-[58px] w-[58px] items-center justify-center rounded-full bg-white/95 shadow-2xl transition-transform group-hover:scale-110 md:h-[77px] md:w-[77px]">
                     <svg
                       viewBox="0 0 24 24"
                       fill="#b21c1c"
-                      className="ml-1 h-8 w-8 md:h-10 md:w-10"
+                      className="ml-1 h-6 w-6 md:h-8 md:w-8"
                       aria-hidden
                     >
                       <path d="M8 5v14l11-7z" />

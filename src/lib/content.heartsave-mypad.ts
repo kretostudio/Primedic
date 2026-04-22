@@ -50,11 +50,6 @@ export const heartsaveMypad = {
             title: "Artımlı Enerji Uygulaması",
             body: "Yetişkin hastalarda enerji kademeli olarak artırılır. 150 J → 170 J → 200 J seviyeleriyle şok etkinliği yükseltilir.",
           },
-        ],
-      },
-      {
-        tag: "Akıllı Ritim Analiz Algoritması",
-        items: [
           {
             title: "Pediatrik Mod",
             body: "Tek tuşla pediatrik moda geçilir. Çocuk hastalarda şok enerjisi güvenli seviyede 50 J olarak uygulanır. CPR geri bildirim fonksiyonu bu modda devre dışıdır.",
@@ -67,6 +62,11 @@ export const heartsaveMypad = {
             title: "ECG Sinyali ile Ritim Analizi",
             body: "Sistem 30–300 bpm aralığını izler ve 25–200 Ω empedansı ölçer. IEC 60601-2-4 standardına uygun güvenli analiz sağlar.",
           },
+        ],
+      },
+      {
+        tag: "Akıllı Ritim Analiz Algoritması",
+        items: [
           {
             title: "Şok Uygulanabilir Ritimler",
             body: "Cihaz hayati risk taşıyan ritimleri otomatik olarak tespit eder. VF tanıma hassasiyeti ≥ %90, Nabızsız VT tanıma hassasiyeti ≥ %75'tir.",

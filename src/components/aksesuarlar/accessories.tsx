@@ -48,57 +48,69 @@ export function AksesuarAccessories() {
   };
 
   return (
-    <section className="bg-white py-[96px] md:py-[140px]">
+    <section className="bg-white py-[61px] md:py-[90px]">
       <Container width="wide">
-        <Reveal as="header" y={24} className="mx-auto flex max-w-[952px] flex-col items-center gap-4 text-center">
-          <span className="inline-flex h-[45px] items-center justify-center rounded-[38px] border border-[#9f2322] bg-white px-6 text-[20px] font-semibold leading-none text-black md:text-[24px]">
+        <Reveal as="header" y={24} className="mx-auto flex max-w-[610px] flex-col items-center gap-2.5 text-center">
+          <span className="inline-flex h-[29px] items-center justify-center rounded-[24px] border border-[#9f2322] bg-white px-4 text-[13px] font-semibold leading-none text-black md:text-[15px]">
             {section.pretitle}
           </span>
-          <h2 className="text-display-xl bg-gradient-to-b from-[#9f2322] from-[37%] to-black to-[73%] bg-clip-text text-transparent">
+          <h2
+            className="text-display-xl bg-clip-text text-transparent"
+            style={{
+              backgroundImage:
+                "radial-gradient(100% 45% at 50% 50%, #9F2322 0%, #70717A 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
             {section.title}
           </h2>
-          <span aria-hidden className="h-[5px] w-[300px] max-w-[60%] bg-[#9f2322]" />
+          <span aria-hidden className="h-[3px] w-[192px] max-w-[60%] bg-[#9f2322]" />
         </Reveal>
 
         {/* Chip slider */}
         <div
-          className="-mx-6 mt-14 flex gap-6 overflow-x-auto overscroll-x-contain px-6 py-10 md:mt-20 md:gap-[52px] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-          role="list"
-          aria-label={section.categoryHeader}
+          className="-mx-5 mt-9 overflow-x-auto overscroll-x-contain px-5 py-6 md:mt-13 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
-          {categories.map((chip) => {
-            const theme = accessoryThemes[chip.tone];
-            return (
-              <button
-                key={chip.id}
-                type="button"
-                role="listitem"
-                onClick={() => handleChipClick(chip.groupId, chip.rowId)}
-                className="flex h-[134px] w-[134px] shrink-0 flex-col items-center justify-center gap-3 rounded-[20px] text-center shadow-[0_16px_32px_-8px_rgba(0,0,0,0.22)] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9f2322]/40"
-                style={{ backgroundColor: theme.chipBg }}
-              >
-                <span
-                  aria-hidden
-                  className="flex h-[58px] w-[58px] items-center justify-center"
+          <div
+            className="mx-auto flex w-fit gap-4 md:gap-[34px]"
+            role="list"
+            aria-label={section.categoryHeader}
+          >
+            {categories.map((chip) => {
+              const theme = accessoryThemes[chip.tone];
+              return (
+                <button
+                  key={chip.id}
+                  type="button"
+                  role="listitem"
+                  onClick={() => handleChipClick(chip.groupId, chip.rowId)}
+                  className="flex h-[86px] w-[86px] shrink-0 flex-col items-center justify-center gap-1.5 rounded-[13px] text-center shadow-[0_10px_21px_-5px_rgba(0,0,0,0.22)] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9f2322]/40"
+                  style={{ backgroundColor: theme.chipBg }}
                 >
-                  <Image
-                    src={chip.icon}
-                    alt={`${chip.label} kategori ikonu`}
-                    width={54}
-                    height={54}
-                    className="h-auto w-auto max-h-[54px] max-w-[54px] object-contain"
-                  />
-                </span>
-                <span className="px-2 text-[15px] font-bold leading-tight text-[#22415e]">
-                  {chip.label}
-                </span>
-              </button>
-            );
-          })}
+                  <span
+                    aria-hidden
+                    className="flex h-[37px] w-[37px] items-center justify-center"
+                  >
+                    <Image
+                      src={chip.icon}
+                      alt={`${chip.label} kategori ikonu`}
+                      width={54}
+                      height={54}
+                      className="h-auto w-auto max-h-[34px] max-w-[34px] object-contain"
+                    />
+                  </span>
+                  <span className="px-1.5 text-[10px] font-bold leading-tight text-[#22415e]">
+                    {chip.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Groups */}
-        <div className="mx-auto mt-14 flex max-w-[1100px] flex-col gap-10 md:mt-20 md:gap-12 2xl:max-w-[1400px]">
+        <div className="mx-auto mt-9 flex max-w-[704px] flex-col gap-6 md:mt-13 md:gap-8 2xl:max-w-[896px]">
           {groups.map((group) => (
             <GroupCard
               key={group.id}
@@ -129,22 +141,22 @@ function GroupCard({ group, openRowId, onToggle, registerRef }: GroupCardProps) 
     <div
       ref={registerRef}
       id={`aksesuar-${group.id}`}
-      className="overflow-hidden rounded-[16px] bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.1)]"
+      className="overflow-hidden rounded-[10px] bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.1)]"
     >
       <div className="grid gap-0 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-        <div className="flex flex-col gap-6 p-8 md:p-12">
+        <div className="flex flex-col gap-4 p-5 md:p-8">
           {/* group content */}
           <p
-            className="text-[14px] font-bold leading-tight md:text-[16px]"
+            className="text-[9px] font-bold leading-tight md:text-[10px]"
             style={{ color: theme.eyebrow }}
           >
             {group.eyebrow}
           </p>
-          <h3 className="text-[26px] font-bold leading-[1.15] text-[#070f17] md:text-[32px]">
+          <h3 className="text-[17px] font-bold leading-[1.15] text-[#070f17] md:text-[21px]">
             {group.title}
           </h3>
 
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-3">
             {group.rows.map((row) => {
               const isOpen = openRowId === row.id;
               return (
@@ -162,7 +174,7 @@ function GroupCard({ group, openRowId, onToggle, registerRef }: GroupCardProps) 
           </ul>
 
           {openRow && (
-            <div className="relative mt-2 aspect-[4/3] w-full overflow-hidden rounded-[12px] md:hidden">
+            <div className="relative mt-2 aspect-[4/3] w-full overflow-hidden rounded-[10px] md:hidden">
               <Image
                 key={openRow.image.src}
                 src={openRow.image.src}
@@ -175,10 +187,10 @@ function GroupCard({ group, openRowId, onToggle, registerRef }: GroupCardProps) 
             </div>
           )}
 
-          <div className="pt-2">
+          <div className="pt-1.5">
             <Link
               href={group.actionHref}
-              className="inline-flex items-center gap-2 rounded-[8px] px-5 py-2.5 text-[15px] font-medium text-[#070f17] transition-colors md:text-[16px]"
+              className="inline-flex items-center gap-2 rounded-[6px] px-4 py-2 text-[12px] font-medium text-[#070f17] transition-colors md:text-[13px]"
               style={{ backgroundColor: theme.button }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = theme.buttonHover;
@@ -216,7 +228,7 @@ function AccordionRow({
 }: AccordionRowProps) {
   return (
     <div
-      className="rounded-[8px] border transition-[background-color] duration-200"
+      className="rounded-[6px] border transition-[background-color] duration-200"
       style={{ borderColor, backgroundColor: bg }}
     >
       <button
@@ -224,19 +236,19 @@ function AccordionRow({
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={`row-body-${row.id}`}
-        className="flex w-full items-start gap-3 px-5 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
+        className="flex w-full items-start gap-2.5 px-4 py-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
       >
         <span className="flex-1">
-          <span className="block text-[18px] font-bold leading-[1.25] text-[#070f17] md:text-[20px]">
+          <span className="block text-[11px] font-bold leading-[1.25] text-[#070f17] md:text-[13px]">
             {row.title}
           </span>
-          <span className="mt-1 block text-[13px] font-semibold leading-[1.35] text-[#070f17]/80 md:text-[14px]">
+          <span className="mt-0.5 block text-[8px] font-semibold leading-[1.35] text-[#070f17]/80 md:text-[9px]">
             {row.subtitle}
           </span>
         </span>
         <span
           aria-hidden
-          className={`mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center transition-transform duration-200 ${
+          className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
         >
@@ -247,7 +259,7 @@ function AccordionRow({
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4 text-[#070f17]"
+            className="h-3.5 w-3.5 text-[#070f17]"
           >
             <path d="M5 8l5 5 5-5" />
           </svg>
@@ -261,7 +273,7 @@ function AccordionRow({
         }`}
       >
         <div className="overflow-hidden">
-          <div className="text-body-sm space-y-3 px-5 pb-5 text-[#070f17]/85">
+          <div className="text-body-sm space-y-2.5 px-4 pb-4 text-[#070f17]/85">
             {row.body.map((p, i) => (
               <p key={i}>{p}</p>
             ))}

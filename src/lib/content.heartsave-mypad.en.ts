@@ -49,11 +49,6 @@ export const heartsaveMypad = {
             title: "Escalating Energy Delivery",
             body: "Energy is incrementally escalated in adult patients. Shock efficacy is enhanced through 150 J → 170 J → 200 J levels.",
           },
-        ],
-      },
-      {
-        tag: "Intelligent Rhythm Analysis Algorithm",
-        items: [
           {
             title: "Pediatric Mode",
             body: "Pediatric mode is activated with a single button press. A safe shock energy of 50 J is delivered for pediatric patients. The CPR feedback function is disabled in this mode.",
@@ -66,6 +61,11 @@ export const heartsaveMypad = {
             title: "Rhythm Analysis via ECG Signal",
             body: "The system monitors a range of 30–300 bpm and measures impedance between 25–200 Ω. It provides safe analysis in compliance with the IEC 60601-2-4 standard.",
           },
+        ],
+      },
+      {
+        tag: "Intelligent Rhythm Analysis Algorithm",
+        items: [
           {
             title: "Shockable Rhythms",
             body: "The device automatically detects life-threatening rhythms. Ventricular fibrillation (VF) detection sensitivity is ≥ 90%, and pulseless ventricular tachycardia (VT) detection sensitivity is ≥ 75%.",

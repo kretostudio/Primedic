@@ -10,13 +10,13 @@ export async function ProductConnectivity() {
   const { title, description, items } = heartsaveMypad.connectivity;
 
   return (
-    <section className="relative overflow-hidden bg-white py-[88px] text-[#2D2E2E] md:py-[140px]">
+    <section className="relative overflow-hidden bg-white py-[70px] text-[#2D2E2E] md:py-[112px]">
       <Image
         src="/images/product/connectivity-screenshot-1.webp"
         alt="HeartSave myPAD bağlantı yönetim paneli ekran görüntüsü — cihaz durum takibi"
         width={696}
         height={532}
-        className="pointer-events-none absolute bottom-[80px] right-[-180px] hidden w-[640px] -rotate-[4.67deg] select-none lg:block"
+        className="pointer-events-none absolute bottom-[-160px] right-[-180px] hidden w-[640px] -rotate-[4.67deg] select-none lg:block"
       />
       <Image
         src="/images/product/connectivity-screenshot-2.webp"
@@ -27,25 +27,25 @@ export async function ProductConnectivity() {
       />
 
       <Container className="relative z-10">
-        <header className="mx-auto max-w-[800px] text-center">
+        <header className="mx-auto max-w-[640px] text-center">
           <h2 className="text-[#b21c1c]">
             {title}
           </h2>
-          <p className="text-lead mt-8 text-[#2D2E2E]">
+          <p className="text-lead mt-6 text-[#2D2E2E]">
             {description}
           </p>
         </header>
 
-        <div className="mx-auto mt-16 grid max-w-[1440px] gap-6 md:grid-cols-2 md:gap-8">
+        <div className="mx-auto mt-12 grid max-w-[1152px] gap-5 md:grid-cols-2 md:gap-6">
           {items.map((item) => (
             <article
               key={item.title}
-              className="rounded-[38px] border-2 border-[#b21c1c] p-10 md:p-14"
+              className="rounded-[30px] border-2 border-[#b21c1c] p-8 md:p-11"
             >
               <h3 className="text-[#2D2E2E]">
                 {item.title}
               </h3>
-              <p className="text-body mt-6 text-[#2D2E2E]/90">
+              <p className="text-body mt-5 text-[#2D2E2E]/90">
                 {item.body}
               </p>
             </article>

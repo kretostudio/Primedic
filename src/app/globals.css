@@ -13,8 +13,8 @@
   --color-ring: rgba(255, 255, 255, 0.08);
   --color-ring-strong: rgba(255, 255, 255, 0.16);
 
-  --container: 1320px;
-  --container-wide: 1856px;
+  --container: 1200px;
+  --container-wide: 1520px;
 
   --radius-pill: 38px;
   --radius-card: 24px;

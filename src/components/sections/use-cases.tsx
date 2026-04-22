@@ -1,6 +1,5 @@
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
-import { Pretitle } from "@/components/ui/pretitle";
-import { ButtonLink } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { getUseCases } from "@/lib/get-content";
 import { getLocale } from "next-intl/server";
@@ -13,41 +12,54 @@ export async function UseCases() {
   return (
     <section
       id="yonetmelik"
-      className="relative bg-[#3c0a0a] py-[120px]"
+      className="relative bg-white py-[96px] md:py-[112px]"
+      style={{
+        backgroundImage:
+          "linear-gradient(172deg, rgba(178, 28, 28, 0.9) 72.2%, rgba(26, 29, 33, 0.81) 96.95%)",
+      }}
       aria-labelledby="use-cases-title"
     >
       <Container>
         <div className="flex flex-col items-center text-center">
           <Reveal y={20}>
-            <Pretitle>{useCases.pretitle}</Pretitle>
+            <span className="inline-flex h-[36px] items-center justify-center rounded-[30px] border border-[#6b8e6f] bg-white px-5 text-[19px] font-semibold text-black">
+              {useCases.pretitle}
+            </span>
           </Reveal>
           <Reveal delay={0.1} y={24}>
             <h2
               id="use-cases-title"
-              className="mt-8 max-w-[900px] text-white"
+              className="mt-[31px] max-w-[660px] text-center font-medium leading-[1.2] text-white text-[24px] md:text-[30px] lg:text-[38px]"
             >
               {useCases.title}
             </h2>
           </Reveal>
           <Reveal delay={0.2} y={20}>
-            <p className="text-body-lg mt-6 max-w-[1100px] text-white/75">
+            <p className="mt-[31px] max-w-[1052px] text-center font-normal leading-[1.25] text-white text-[16px] md:text-[20px] lg:text-[26px] lg:leading-[32px]">
               {useCases.description}
             </p>
           </Reveal>
         </div>
 
-        <ul className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:max-w-[1075px] xl:mx-auto">
+        <ul className="mt-16 grid gap-5 sm:grid-cols-2 lg:gap-10 xl:max-w-[860px] xl:mx-auto">
           {useCases.items.map((item, i) => (
             <Reveal key={item.title} as="li" delay={i * 0.08} y={28}>
-              <div className="group flex h-full flex-col gap-6 rounded-[24px] border border-white/10 bg-white/[0.04] p-8 transition-colors hover:bg-white/[0.07]">
-                <span className="flex h-14 w-14 items-center justify-center rounded-[16px] border border-white/15 bg-white/10 text-white">
-                  <UseCaseIcon name={item.icon} />
-                </span>
-                <div>
-                  <h3 className="text-[20px] leading-[1.2] text-white md:text-[22px]">
+              <div
+                className="relative h-full min-h-[223px] rounded-[19px] p-[19px] md:p-[19px]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(73deg, rgba(0, 0, 0, 0.3) 25.25%, rgba(83, 84, 108, 0.3) 98%)",
+                }}
+              >
+                <UseCaseIcon
+                  name={item.icon}
+                  className="h-[45px] w-[45px] text-white"
+                />
+                <div className="mt-[30px]">
+                  <h3 className="text-[19px] font-bold leading-[22px] text-white">
                     {item.title}
                   </h3>
-                  <p className="text-body-sm mt-3 text-white/70">
+                  <p className="mt-[6px] text-[16px] font-medium leading-[22px] text-white">
                     {item.description}
                   </p>
                 </div>
@@ -57,9 +69,12 @@ export async function UseCases() {
         </ul>
 
         <div className="mt-14 flex justify-center">
-          <ButtonLink href={useCases.actionHref} variant="outline">
+          <Link
+            href={useCases.actionHref}
+            className="inline-flex h-[45px] w-[190px] items-center justify-center rounded-[19px] border-2 border-[#b21c1c] bg-white text-[19px] font-medium leading-none text-[#b21c1c] transition-colors hover:bg-[#b21c1c] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b21c1c]/40"
+          >
             {useCases.actionLabel}
-          </ButtonLink>
+          </Link>
         </div>
       </Container>
     </section>

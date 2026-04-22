@@ -142,30 +142,30 @@ export function AksesuarFeatureStrip() {
     >
       <div
         ref={scrollerRef}
-        className="-mx-6 flex cursor-grab items-stretch gap-[25px] overflow-x-auto overscroll-x-contain px-6 py-10 pr-12 select-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="-mx-6 flex cursor-grab items-stretch gap-[20px] overflow-x-auto overscroll-x-contain px-6 py-8 pr-10 select-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         style={{ touchAction: "pan-y" }}
       >
         {featureStrip.map((card) => (
           <article
             key={card.id}
-            className="flex w-[240px] shrink-0 flex-col rounded-[20px] border border-white/15 pb-5 shadow-[0_24px_48px_-16px_rgba(0,0,0,0.65)] md:w-[294px] xl:w-[320px] 2xl:w-[360px]"
+            className="flex w-[192px] shrink-0 flex-col rounded-[16px] border border-white/15 pb-4 shadow-[0_19px_38px_-12px_rgba(0,0,0,0.65)] md:w-[235px] xl:w-[256px] 2xl:w-[288px]"
             style={{
               backgroundImage:
                 "linear-gradient(80deg, rgba(0,0,0,0.3) 25%, rgba(83,84,108,0.3) 98%)",
             }}
           >
-            <div className="relative h-[200px] w-full overflow-hidden rounded-t-[20px] md:h-[250px] xl:h-[280px] 2xl:h-[320px]">
+            <div className="relative h-[160px] w-full overflow-hidden rounded-t-[16px] md:h-[200px] xl:h-[224px] 2xl:h-[256px]">
               <Image
                 src={card.image.src}
                 alt={card.image.alt}
                 width={588}
                 height={500}
-                sizes="294px"
+                sizes="235px"
                 draggable={false}
                 className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
               />
             </div>
-            <p className="text-body-lg mt-4 px-5 text-center font-medium text-white">
+            <p className="text-body-lg mt-3 px-4 text-center font-medium text-white">
               {card.label}
             </p>
           </article>
@@ -174,11 +174,11 @@ export function AksesuarFeatureStrip() {
 
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#3d4452] to-transparent opacity-80 hidden md:block"
+        className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#3d4452] to-transparent opacity-80 hidden md:block"
       />
 
       <div
-        className="mt-6 h-[3px] w-full max-w-[280px] overflow-hidden rounded-full bg-white/15"
+        className="mt-5 h-[2px] w-full max-w-[224px] overflow-hidden rounded-full bg-white/15"
         aria-hidden
       >
         <div

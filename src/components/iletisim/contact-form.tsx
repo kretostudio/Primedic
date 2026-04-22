@@ -63,7 +63,7 @@ export function IletisimContactForm() {
         <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-start lg:gap-24">
           <div className="flex flex-col">
             <Reveal y={24}>
-              <h2 className="text-[34px] font-bold leading-[1.15] tracking-[0.2px] text-black md:text-[42px] lg:text-[48px] lg:leading-[60px]">
+              <h2 className="text-[28px] font-bold leading-[1.15] tracking-[0.2px] text-black md:text-[34px] lg:text-[40px] lg:leading-[50px]">
                 {heading}
               </h2>
             </Reveal>

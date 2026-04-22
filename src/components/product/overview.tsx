@@ -10,14 +10,14 @@ export async function ProductOverview() {
   const { title, description, groups } = heartsaveMypad.overview;
 
   return (
-    <section className="relative overflow-hidden bg-white py-[88px] text-[#2D2E2E] md:py-[140px]">
+    <section className="relative overflow-hidden bg-white py-[58px] text-[#2D2E2E] md:py-[90px]">
       <Image
         src="/images/product/heartbeat-left.svg"
         alt="Kalp ritmi dalgası — sol dekoratif EKG çizgisi"
         width={384}
         height={184}
         unoptimized
-        className="pointer-events-none absolute top-[110px] hidden w-[380px] select-none lg:left-[calc(50%-948px)] lg:block xl:left-[calc(50%-1028px)] xl:w-[460px]"
+        className="pointer-events-none absolute left-0 top-[128px] hidden w-[218px] select-none md:block lg:top-[140px] lg:w-[270px] xl:w-[308px]"
       />
       <Image
         src="/images/product/heartbeat-right.svg"
@@ -25,48 +25,50 @@ export async function ProductOverview() {
         width={375}
         height={184}
         unoptimized
-        className="pointer-events-none absolute top-[110px] hidden w-[380px] select-none lg:right-[calc(50%-948px)] lg:block xl:right-[calc(50%-1028px)] xl:w-[460px]"
+        className="pointer-events-none absolute right-0 top-[128px] hidden w-[218px] select-none md:block lg:top-[140px] lg:w-[270px] xl:w-[308px]"
       />
 
       <Container>
-        <div className="mx-auto max-w-[1055px] text-center">
+        <div className="relative z-10 mx-auto max-w-[672px] text-center">
           <h2
             className="bg-clip-text text-transparent"
             style={{
               backgroundImage:
-                "linear-gradient(180deg, #b21c1c 30%, #2D2E2E 100%)",
+                "radial-gradient(100% 45% at 50% 50%, #9F2322 0%, #70717A 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
           >
             {title}
           </h2>
-          <p className="text-lead mt-10 text-[#2D2E2E]/85">
+          <p className="text-lead mt-6 text-[#2D2E2E]/85">
             {description}
           </p>
         </div>
 
-        <div className="mt-20 space-y-20 md:space-y-28">
+        <div className="relative z-10 mx-auto mt-12 max-w-[848px] space-y-12 md:mt-16 md:space-y-16">
           {groups.map((group) => (
             <div key={group.tag}>
-              <div className="mb-12 flex justify-center">
-                <span className="inline-flex items-center rounded-full border border-[#b21c1c] bg-white px-5 py-2 text-[16px] font-normal leading-none text-[#b21c1c] md:text-[20px]">
+              <div className="mb-8 flex justify-start">
+                <span className="inline-flex items-center rounded-full border border-[#b21c1c] bg-white px-4 py-1.5 text-[13px] font-normal leading-none text-[#b21c1c] md:text-[16px]">
                   {group.tag}
                 </span>
               </div>
 
-              <ul className="grid gap-x-14 gap-y-16 md:grid-cols-3">
+              <ul className="grid gap-x-10 gap-y-10 md:grid-cols-3">
                 {group.items.map((item) => (
                   <li key={item.title}>
-                    <h3 className="text-[20px] font-bold leading-[30px] text-[#2D2E2E] md:text-[24px] md:leading-[32px]">
+                    <h3 className="text-[18px] font-bold leading-[1.25] text-[#2D2E2E] md:text-[20px]">
                       {item.title}
                     </h3>
-                    <p className="text-body mt-5 text-[#2D2E2E]/85">
+                    <p className="text-body mt-4 text-[#2D2E2E]/85">
                       {item.body}
                     </p>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-16 h-px w-full bg-[#b21c1c]/30 md:mt-20" />
+              <div className="mt-12 h-px w-full bg-[#b21c1c]/30 md:mt-14" />
             </div>
           ))}
         </div>
