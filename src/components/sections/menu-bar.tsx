@@ -29,14 +29,30 @@ export function MenuBar() {
   const nav = getNav(locale);
   const pathname = usePathname() ?? "/";
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      const delta = y - lastY;
+      if (y > 120 && delta > 4) {
+        setHidden(true);
+      } else if (delta < -4 || y <= 24) {
+        setHidden(false);
+      }
+      lastY = y;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (mobileOpen) setHidden(false);
+  }, [mobileOpen]);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -54,7 +70,9 @@ export function MenuBar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,box-shadow,height] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,box-shadow,height,transform] duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      } ${
         scrolled
           ? "bg-[#2a0505]/95 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md"
           : "bg-transparent"

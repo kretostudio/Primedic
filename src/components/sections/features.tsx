@@ -13,10 +13,10 @@ export async function Features() {
   return (
     <section
       id="urunler"
-      className="relative overflow-hidden bg-black py-[140px] md:py-[178px]"
+      className="relative overflow-hidden bg-white py-[80px] md:py-[112px]"
       style={{
         backgroundImage:
-          "linear-gradient(151deg, rgba(178, 28, 28, 0.9) 53.35%, rgba(26, 29, 33, 0.81) 86.79%)",
+          "linear-gradient(151deg, rgba(178, 28, 28, 0.9) 31%, rgba(26, 29, 33, 0.81) 89%)",
       }}
       aria-labelledby="features-title"
     >
@@ -31,13 +31,13 @@ export async function Features() {
             <Reveal delay={0.1} y={24}>
               <h2
                 id="features-title"
-                className="mt-10 max-w-[672px] text-white"
+                className="mt-12 max-w-[672px] text-[32px] font-semibold leading-[1.2] text-white md:text-[40px] lg:text-[48px]"
               >
                 {features.title}
               </h2>
             </Reveal>
             <Reveal delay={0.2} y={20}>
-              <p className="text-lead-lg mt-4 max-w-[1315px] text-white">
+              <p className="mt-4 max-w-[1315px] text-[20px] font-normal leading-[1.25] text-white md:text-[24px] lg:text-[32px]">
                 {features.description}
               </p>
             </Reveal>
