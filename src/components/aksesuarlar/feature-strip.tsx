@@ -162,7 +162,7 @@ export function AksesuarFeatureStrip() {
                 height={500}
                 sizes="235px"
                 draggable={false}
-                className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+                className="pointer-events-none absolute inset-0 h-full w-full object-contain object-center p-4"
               />
             </div>
             <p className="text-body-lg mt-3 px-4 text-center font-medium text-white">
@@ -171,11 +171,6 @@ export function AksesuarFeatureStrip() {
           </article>
         ))}
       </div>
-
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#3d4452] to-transparent opacity-80 hidden md:block"
-      />
 
       <div
         className="mt-5 h-[2px] w-full max-w-[224px] overflow-hidden rounded-full bg-white/15"

@@ -28,8 +28,9 @@ export async function Hero() {
             </Reveal>
 
             <Reveal delay={0.2} y={28}>
-              <h1 className="mt-6 max-w-[576px] text-balance text-[24px] font-semibold leading-[1.2] text-white md:text-[32px] lg:text-[37px]">
-                {hero.titleLine1} {hero.titleLine2}
+              <h1 className="mt-6 max-w-[576px] text-[24px] font-semibold leading-[1.2] text-white md:text-[32px] lg:text-[37px]">
+                <span className="block">{hero.titleLine1}</span>
+                <span className="block">{hero.titleLine2}</span>
               </h1>
             </Reveal>
 
@@ -41,7 +42,7 @@ export async function Hero() {
           </div>
 
           <Reveal delay={0.5} y={40} duration={0.7} className="w-full">
-            <div className="pointer-events-none relative z-0 -mt-26 flex w-full justify-center md:-mt-38 lg:-mt-52">
+            <div className="pointer-events-none relative z-0 -mt-16 flex w-full justify-center md:-mt-24 lg:-mt-32">
               <Image
                 src="/images/hero/composition.webp"
                 alt="HeartSave myPAD — kompakt defibrilatör cihazı: LTE & Wifi bağlantı, CPR geri bildirimi, IP66 dayanıklılık, 1.1 kg, 5 yıl batarya, pediatrik mod"

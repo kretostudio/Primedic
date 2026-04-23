@@ -51,29 +51,40 @@ export async function HakkimizdaHero() {
             </Reveal>
           </div>
 
-          <div className="grid h-[368px] grid-cols-3 grid-rows-2 gap-3 md:h-[448px] md:gap-4">
-            <HeroTile
-              src={tallLeft.src}
-              alt={tallLeft.alt}
-              className="col-start-1 row-span-2"
+          <div className="relative">
+            <Image
+              src="/images/hakkimizda/hero-circles.png"
+              alt=""
+              aria-hidden
+              width={1200}
+              height={900}
               priority
+              className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-auto w-[115%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none object-contain opacity-90"
             />
-            <HeroTile
-              src={shortTop.src}
-              alt={shortTop.alt}
-              className="col-start-2 row-start-1"
-            />
-            <HeroTile
-              src={shortBottom.src}
-              alt={shortBottom.alt}
-              className="col-start-2 row-start-2"
-            />
-            <HeroTile
-              src={tallRight.src}
-              alt={tallRight.alt}
-              className="col-start-3 row-span-2"
-              priority
-            />
+            <div className="relative grid h-[368px] grid-cols-3 grid-rows-2 gap-3 md:h-[448px] md:gap-4">
+              <HeroTile
+                src={tallLeft.src}
+                alt={tallLeft.alt}
+                className="col-start-1 row-span-2"
+                priority
+              />
+              <HeroTile
+                src={shortTop.src}
+                alt={shortTop.alt}
+                className="col-start-2 row-start-1"
+              />
+              <HeroTile
+                src={shortBottom.src}
+                alt={shortBottom.alt}
+                className="col-start-2 row-start-2"
+              />
+              <HeroTile
+                src={tallRight.src}
+                alt={tallRight.alt}
+                className="col-start-3 row-span-2"
+                priority
+              />
+            </div>
           </div>
         </div>
       </Container>

@@ -52,7 +52,7 @@ export const stats: {
     quote: ReadonlyArray<StatsQuotePart>;
   }>;
 } = {
-  title: "Kalp Durmasında Erken Müdahalenin Önemi",
+  title: "Kalp Durmasında\nErken Müdahalenin Önemi",
   slides: [
     {
       source: "American Heart Association (AHA)",

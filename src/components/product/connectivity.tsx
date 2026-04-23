@@ -10,20 +10,20 @@ export async function ProductConnectivity() {
   const { title, description, items } = heartsaveMypad.connectivity;
 
   return (
-    <section className="relative overflow-hidden bg-white py-[70px] text-[#2D2E2E] md:py-[112px]">
+    <section className="relative bg-white py-[70px] text-[#2D2E2E] md:py-[112px]">
       <Image
         src="/images/product/connectivity-screenshot-1.webp"
         alt="HeartSave myPAD bağlantı yönetim paneli ekran görüntüsü — cihaz durum takibi"
         width={696}
         height={532}
-        className="pointer-events-none absolute bottom-[-160px] right-[-180px] hidden w-[640px] -rotate-[4.67deg] select-none lg:block"
+        className="pointer-events-none absolute bottom-[-160px] right-[-180px] z-20 hidden w-[640px] -rotate-[4.67deg] select-none lg:block"
       />
       <Image
         src="/images/product/connectivity-screenshot-2.webp"
         alt="HeartSave myPAD IoT konumlandırma haritası ekran görüntüsü"
         width={522}
         height={401}
-        className="pointer-events-none absolute left-[-200px] top-[-40px] hidden w-[480px] rotate-[8.78deg] select-none lg:block"
+        className="pointer-events-none absolute left-[-200px] top-[-40px] z-20 hidden w-[480px] rotate-[8.78deg] select-none lg:block"
       />
 
       <Container className="relative z-10">

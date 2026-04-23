@@ -54,7 +54,7 @@ export const stats: {
     quote: ReadonlyArray<StatsQuotePart>;
   }>;
 } = {
-  title: "The Importance of Early Intervention in Cardiac Arrest",
+  title: "In Cardiac Arrest\nThe Importance of Early Intervention",
   slides: [
     {
       source: "American Heart Association (AHA)",

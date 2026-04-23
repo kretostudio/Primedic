@@ -31,7 +31,7 @@ export async function Features() {
             <Reveal delay={0.1} y={24}>
               <h2
                 id="features-title"
-                className="mt-8 max-w-[448px] leading-[1.2] text-white"
+                className="mt-8 leading-[1.2] text-white md:whitespace-nowrap"
               >
                 {features.title}
               </h2>
