@@ -24,15 +24,14 @@ export async function MidCTA() {
 
               <h2
                 id="cta-title"
-                className="text-display-xl max-w-[760px] bg-clip-text text-transparent"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(100% 45% at 50% 50%, #FFFFFF 30%, rgba(255,255,255,0.40) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
+                className="text-display-xl"
               >
-                {ctaBanner.title} {ctaBanner.titleAccent}
+                <span className="block whitespace-nowrap text-[#b21c1c]">
+                  {ctaBanner.title}
+                </span>
+                <span className="block whitespace-nowrap text-black">
+                  {ctaBanner.titleAccent}
+                </span>
               </h2>
 
               <span

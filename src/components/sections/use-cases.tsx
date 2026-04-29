@@ -71,7 +71,7 @@ export async function UseCases() {
         <div className="mt-14 flex justify-center">
           <Link
             href={useCases.actionHref}
-            className="inline-flex h-[45px] w-[190px] items-center justify-center rounded-[19px] border-2 border-[#b21c1c] bg-white text-[19px] font-medium leading-none text-[#b21c1c] transition-colors hover:bg-[#b21c1c] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b21c1c]/40"
+            className="inline-flex h-[45px] items-center justify-center whitespace-nowrap rounded-[19px] border-2 border-[#b21c1c] bg-white px-6 text-[19px] font-medium leading-none text-[#b21c1c] transition-colors hover:bg-[#b21c1c] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b21c1c]/40"
           >
             {useCases.actionLabel}
           </Link>
