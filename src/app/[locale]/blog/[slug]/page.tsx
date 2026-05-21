@@ -15,6 +15,11 @@ import { dummyPosts } from "@/lib/dummy-posts";
 import { getLocale } from "next-intl/server";
 
 const SITE_URL = "https://primedic.com.tr";
+const DEFAULT_OG_IMAGE = "https://primedic.com.tr/og-image.png";
+const DEFAULT_DESC_TR =
+  "Primedic blog — kalp sağlığı, AED ve acil müdahale konularında uzman içerikler.";
+const DEFAULT_DESC_EN =
+  "Primedic blog — expert content on heart health, AED, and emergency response.";
 
 export const revalidate = 60;
 
@@ -59,7 +64,7 @@ export async function generateMetadata({
     };
   }
 
-  const canonical = `${SITE_URL}/blog/${post.slug}`;
+  const canonical = `${SITE_URL}/${locale}/blog/${post.slug}`;
   const title = post.seo?.title ?? `${post.title} | Primedic Blog`;
   const description = post.seo?.description ?? post.excerpt ?? undefined;
   const dummyCover = (post as Post & { coverUrl?: string }).coverUrl;
@@ -69,10 +74,27 @@ export async function generateMetadata({
       ? urlForImage(post.coverImage).width(1200).height(630).url()
       : undefined;
 
+  // Build hreflang languages dynamically from linkedTranslation.
+  // Only emit when the editor has linked a translation in Sanity Studio.
+  const translation = post.linkedTranslation ?? null;
+  let alternatesLanguages: Record<string, string> | undefined;
+  if (translation?.slug && translation?.language && translation.language !== locale) {
+    const trSlug = locale === "tr" ? post.slug : translation.slug;
+    const enSlug = locale === "en" ? post.slug : translation.slug;
+    alternatesLanguages = {
+      "tr-TR": `${SITE_URL}/tr/blog/${trSlug}`,
+      "en-US": `${SITE_URL}/en/blog/${enSlug}`,
+      "x-default": `${SITE_URL}/tr/blog/${trSlug}`,
+    };
+  }
+
   return {
     title,
     description,
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      ...(alternatesLanguages && { languages: alternatesLanguages }),
+    },
     openGraph: {
       type: "article",
       url: canonical,
@@ -120,6 +142,31 @@ export default async function BlogPostPage({
     : post.coverImage
       ? urlForImage(post.coverImage).width(2000).height(1125).url()
       : null;
+
+  const canonical = `${SITE_URL}/${locale}/blog/${post.slug}`;
+  const schemaDescription =
+    post.seo?.description ??
+    post.excerpt ??
+    (locale === "en" ? DEFAULT_DESC_EN : DEFAULT_DESC_TR);
+  const schemaImage = coverUrl ?? DEFAULT_OG_IMAGE;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: schemaDescription,
+    image: schemaImage,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: { "@type": "Organization", name: "Primedic — Bilgin Tıp" },
+    publisher: {
+      "@type": "Organization",
+      name: "Primedic — Bilgin Tıp",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+    inLanguage: locale === "en" ? "en-US" : "tr-TR",
+  };
+
   const dateLabel = new Date(post.publishedAt).toLocaleDateString(
     locale === "en" ? "en-US" : "tr-TR",
     {
@@ -132,6 +179,10 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <MenuBar />
       <main>
         <article className="bg-white">
@@ -168,7 +219,7 @@ export default async function BlogPostPage({
             <Container>
               <div className="mx-auto -mt-[48px] max-w-[1120px] md:-mt-[72px]">
                 {coverUrl ? (
-                  <div className="relative aspect-[16/9] overflow-hidden rounded-[24px] bg-black/5 ring-1 ring-black/5">
+                  <div className="relative aspect-[16/9] min-h-[220px] overflow-hidden rounded-[24px] bg-black/5 ring-1 ring-black/5">
                     <Image
                       src={coverUrl}
                       alt={post.coverImage?.alt ?? post.title}
@@ -179,7 +230,12 @@ export default async function BlogPostPage({
                       className="absolute inset-0 h-full w-full object-cover"
                     />
                   </div>
-                ) : null}
+                ) : (
+                  <div
+                    aria-hidden
+                    className="aspect-[16/9] min-h-[220px] rounded-[24px] bg-black/5 ring-1 ring-black/5"
+                  />
+                )}
               </div>
 
               <div className="mx-auto mt-16 max-w-[880px] md:mt-20">

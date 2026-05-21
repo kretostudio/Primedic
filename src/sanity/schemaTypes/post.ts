@@ -20,6 +20,24 @@ export const post = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "linkedTranslation",
+      title: "Diğer Dildeki Versiyon / Translated Version",
+      type: "reference",
+      to: [{ type: "post" }],
+      description:
+        "Bu yazının diğer dildeki karşılığını seçin. TR post → EN versiyona, EN post → TR versiyona referans verir. hreflang için kullanılır. İki yönlü link için her iki postta da bu alan doldurulmalıdır.",
+      options: {
+        filter: ({ document }) => {
+          const currentLanguage = (document as { language?: string })?.language;
+          if (!currentLanguage) return { filter: "" };
+          return {
+            filter: "language != $currentLanguage",
+            params: { currentLanguage },
+          };
+        },
+      },
+    }),
+    defineField({
       name: "title",
       title: "Başlık / Title",
       type: "string",

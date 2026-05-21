@@ -37,7 +37,11 @@ export const postBySlugQuery = groq`
     body,
     tags,
     seo,
-    "categories": categories[]->{ _id, title, "slug": slug.current }
+    "categories": categories[]->{ _id, title, "slug": slug.current },
+    "linkedTranslation": linkedTranslation->{
+      "slug": slug.current,
+      language
+    }
   }
 `;
 

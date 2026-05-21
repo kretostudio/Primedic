@@ -69,18 +69,21 @@ export function FAQ() {
                       onClick={() => toggle(i)}
                       className="flex w-full items-start justify-between gap-4 p-4 text-left"
                     >
-                      <span className="flex flex-1 flex-col gap-2.5">
+                      <span className="flex flex-1 flex-col">
                         <span className="text-[12px] font-bold leading-[1.3] text-[#272d27] md:text-[14px] lg:text-[15px] lg:leading-[19px]">
                           {item.question}
                         </span>
-                        {isOpen && (
-                          <span
-                            id={panelId}
-                            className="whitespace-pre-line text-[11px] font-normal leading-[1.55] text-[#272d27] md:text-[13px] lg:text-[15px] lg:leading-[21px]"
-                          >
+                        <span
+                          id={panelId}
+                          className={cn(
+                            "grid overflow-hidden transition-[grid-template-rows] duration-300 ease-out",
+                            isOpen ? "mt-2.5 grid-rows-[1fr]" : "grid-rows-[0fr]",
+                          )}
+                        >
+                          <span className="min-h-0 overflow-hidden whitespace-pre-line text-[11px] font-normal leading-[1.55] text-[#272d27] md:text-[13px] lg:text-[15px] lg:leading-[21px]">
                             {item.answer}
                           </span>
-                        )}
+                        </span>
                       </span>
                       <span
                         className={cn(
