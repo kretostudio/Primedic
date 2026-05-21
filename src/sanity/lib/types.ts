@@ -27,4 +27,5 @@ export type Post = PostListItem & {
   body?: PortableTextBlock[];
   tags?: string[];
   seo?: { title?: string; description?: string };
+  linkedTranslation?: { slug: string; language: Locale } | null;
 };

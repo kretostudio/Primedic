@@ -167,3 +167,13 @@ body {
   background: var(--color-accent);
   color: #fff;
 }
+
+/* Mobile tap-target minimum (Google 48x48px). Opt out per-element with data-tap-exempt. */
+@media (max-width: 768px) {
+  button:not([data-tap-exempt]),
+  input,
+  select,
+  textarea {
+    min-height: 48px;
+  }
+}

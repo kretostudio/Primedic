@@ -52,6 +52,7 @@ export function LanguageSwitcher() {
     <div ref={containerRef} className="relative">
       <button
         type="button"
+        data-tap-exempt
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}

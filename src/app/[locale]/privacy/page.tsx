@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { PlaceholderPage } from "@/components/ui/placeholder-page";
 
+const SITE_URL = "https://primedic.com.tr";
+const TR_PATH = "/tr/privacy";
+const EN_PATH = "/en/privacy";
+
 const copy = {
   tr: {
     title: "Gizlilik Politikası",
@@ -23,10 +27,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = copy[locale] ?? copy.tr;
+  const canonical = `${SITE_URL}${locale === "en" ? EN_PATH : TR_PATH}`;
   return {
     title: t.seoTitle,
     description: t.description,
-    robots: { index: false, follow: true },
+    alternates: {
+      canonical,
+      languages: {
+        "tr-TR": `${SITE_URL}${TR_PATH}`,
+        "en-US": `${SITE_URL}${EN_PATH}`,
+        "x-default": `${SITE_URL}${TR_PATH}`,
+      },
+    },
   };
 }
 
